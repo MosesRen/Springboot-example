@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>注册页面</title>
+</head>
+<body>
+<form action="/registertest">
+    <h3><b>注册您的信息</b></h3>
+    <div>
+        <label>用户名:</label>
+        <input type="text" placeholder="请输入用户名" name="username">
+    </div>
+    <div>
+        <label>密码:</label>
+        <input type="password" placeholder="请输入密码" name="password">
+    </div>
+    <div>
+        <label>邮箱:</label>
+        <input type="text" placeholder="请输入邮箱" name="email">
+    </div>
+    <div>
+        <input type="button" value="返回" onclick="javascrtpt:window.location.href='/'">
+        <input type="submit" value="注册" >
+    </div>
+</form>
+<div>
+    <p th:text="${information}" style="color: red" align="center">这里是信息提示.</p>
+</div>
+</body>
+</html>
