@@ -11,21 +11,20 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.annotation.Resource;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @EnableAutoConfiguration
 public class DemoApplicationTests {
-    private static final Logger logger = LoggerFactory.getLogger(DemoApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(DemoApplicationTests.class);
 
-    @Resource
+    @Autowired
     private UserinfoMapper userinfoMapper;
 
     @Test
     public void contextLoads() throws Exception{
         logger.info("test start!");
-        userinfoMapper.register("tom","123456","123456@163.com");
+        //userinfoMapper.register("tom","123456","123456@163.com");
         Userinfo testusrinfo = userinfoMapper.findByUsername("tom");
         logger.info(testusrinfo.getEmail());
 
